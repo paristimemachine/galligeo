@@ -2,10 +2,20 @@
 
 ```mermaid
 flowchart TD
-    A1[Gallica] -->|Get map| B(Galligeo)
-    A2[Cartoquete] -->|Get map| B(Galligeo)
+    A1[Gallica] -->|Get map arkid| B(Galligeo)
+    A2[Cartoquete] -->|Get map arkid| B(Galligeo)
     B --> C{Landing page Galligeo}
-    C -->|Export| D[Laptop]
-    C -->|Two| E[iPhone]
-    C -->|Three| F[fa:fa-car Car]
+        C -->|Manipulations utilisateur| D1(Tester une connexion utilisateur)
+        C -->|Manipulations utilisateur| D2(Récupération carte Gallica dans Galligeo)
+        D2 -->|Manipulations utilisateur| E{Processus de Géoréférencement}
+        E -->|Manipulations utilisateur| F[Saisie de points de contrôle]
+        F -->|Manipulations utilisateur| G[Saisie du masque]
+        G -->|Manipulations utilisateur| H{Produire un géoréférencement}
+        H -->|Manipulations utilisateur| I{Observer le résultat du géoréférencement}
+            I -->|Manipulations utilisateur| I1[Dans la fenêtre principale]
+            I -->|Manipulations utilisateur| I2[Dans la fenêtre secondaire]
+        H -->|Manipulations utilisateur| J{Réaliser un dépôt}
+            J -->|Manipulations utilisateur| K1[Réaliser un dépôt interne]
+            J -->|Manipulations utilisateur| K2[Réaliser un dépôt sur Nakala]
+            J -->|Manipulations utilisateur| K3[Réaliser un dépôt sur FNP]
 ```
