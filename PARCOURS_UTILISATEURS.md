@@ -2,6 +2,9 @@
 
 ```mermaid
 flowchart TD
+    style A1 font-size:18px
+    style A2 font-size:18px
+    style B font-size:18px
     A1[Gallica] -->|Get map arkid| B(Galligeo)
     A2[Cartoquete] -->|Get map arkid| B(Galligeo)
     B --> C{Landing page Galligeo}
